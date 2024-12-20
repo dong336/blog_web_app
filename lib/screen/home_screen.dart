@@ -36,13 +36,25 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.orange,
         title: Text('Code Factory'),
-        centerTitle: true,
+        centerTitle: false,
         actions: [
+          IconButton(
+            onPressed: () {
+              _controller.goBack();
+            },
+            icon: Icon(Icons.arrow_back),
+          ),
           IconButton(
             onPressed: () {
               _controller.loadRequest(Uri.parse('https://www.youtube.com/'));
             },
             icon: Icon(Icons.home),
+          ),
+          IconButton(
+            onPressed: () {
+              _controller.goForward();
+            },
+            icon: Icon(Icons.arrow_forward),
           ),
         ],
       ),
